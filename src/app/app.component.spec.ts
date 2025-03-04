@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Coursera-Clone-Angular' title`, () => {
+  it(`should have the 'ecommerce' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Coursera-Clone-Angular');
+    expect(app.title).toEqual('ecommerce');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Coursera-Clone-Angular');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ecommerce');
   });
 });
