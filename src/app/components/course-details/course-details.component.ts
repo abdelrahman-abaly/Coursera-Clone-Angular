@@ -26,6 +26,8 @@ export class CourseDetailsComponent implements OnInit {
     this.CourseId = this.activatedroute.snapshot.paramMap.get('CourseId')
       ? String(this.activatedroute.snapshot.paramMap.get('CourseId'))
       : '';
+
+      
     this.GetCareerCourseById();
     // this.GetSimilarCourses();
   }

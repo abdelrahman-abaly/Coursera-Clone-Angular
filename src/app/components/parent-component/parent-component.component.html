@@ -48,49 +48,48 @@
 
   <app-career [filtervalue]="sendedValueFromParent"></app-career>
 
+  <!-- career resources -->
+  <div class="CareerResourse">
+    <h2 class="mb-4 CareerResouresHeader">Career resources</h2>
 
-<!-- career resources -->
-<div class="CareerResourse">
-  <h2 class="mb-4 CareerResouresHeader">Career resources</h2>
+    <div class="buttons-container d-flex flex-wrap gap-2">
+      @for (Resoursescat of CareerResourseCategory; track
+      Resoursescat.categoryID) {
+      <button
+        class="btn rounded-pill fw-semibold py-1"
+        [class.active]="selectedCategory === Resoursescat.categoryID"
+        (click)="selectResours(Resoursescat.categoryID)"
+      >
+        {{ Resoursescat.categoryName }}
+      </button>
+      }
+    </div>
 
-  
-  <div class="buttons-container d-flex flex-wrap gap-2">
-   
-    @for (Resoursescat of CareerResourseCategory; track Resoursescat.categoryID) {
-    <button
-      class="btn rounded-pill fw-semibold py-1"
-      [class.active]="selectedCategory === Resoursescat.categoryID"
-      (click)="selectResours(Resoursescat.categoryID)"
-    >
-      {{ Resoursescat.categoryName }}
-    </button>
-    }
-  </div>
+    <div class="container-fluid px-0 mx-0">
+      <div class="row gap-3">
+        @for (resource of CareerResourses.slice(0, visibleCoursesCount); track
+        resource.id) { @if (selectedCategory === '' || selectedCategory ===
+        resource.categoryID) {
 
-  <div class="container-fluid px-0 mx-0">
-    <div class="row gap-3">
-  @for (resource of CareerResourses.slice(0, visibleCoursesCount); track resource.id) {
-   @if (selectedCategory === '' || selectedCategory === resource.categoryID) {
+        <div class="CareerResoursesCard mb-4 rounded-4">
+          <h6 class="fw-bold mb-2">{{ resource.question }}</h6>
+          <p>{{ resource.answer }}</p>
+          <p>{{ resource.date }}</p>
+        </div>
 
-      <div class="CareerResoursesCard mb-4 rounded-4">
-        <h6 class="fw-bold mb-2">{{ resource.question }}</h6>
-        <p>{{ resource.answer }}</p>
-        <p>{{ resource.date }}</p>
+        } }
       </div>
+    </div>
 
-      } }
+    <div class="container-fluid my-4 toggleShowMore mb-4 pb-5 px-0">
+      <button
+        class="rounded text-primary border border-primary"
+        (click)="toggleShowMore()"
+      >
+        {{ visibleCoursesCount > 4 ? "Show fewer" : "Show 6 more" }}
+      </button>
     </div>
   </div>
-
-  <div class="container-fluid my-4 toggleShowMore mb-4 pb-5 px-0">
-    <button
-      class="rounded text-primary border border-primary"
-      (click)="toggleShowMore()"
-    >
-      {{ visibleCoursesCount > 4 ? 'Show fewer' : 'Show 6 more' }}
-    </button>
-  </div>
-</div>
 
   <!-- success stories  -->
 
@@ -103,7 +102,11 @@
           <div class="container-fluid px-0">
             <div class="row upperPart">
               <div class="col-md-5 me-2 text-center">
-                <img src="{{ story.personImage }}" alt="" class="rounded-circle w-75 img-fluid " />
+                <img
+                  src="{{ story.personImage }}"
+                  alt=""
+                  class="rounded-circle w-75 img-fluid"
+                />
               </div>
               <div class="col-md-6 px-0">
                 <h6>{{ story.name }}</h6>
@@ -120,12 +123,14 @@
     </div>
   </div>
 
-
   <!-- last part  -->
 
-<div class="lastPartContainer">
-  <p class="lastPart">¹ Median salary and job opening data are sourced from Lightcast™ Job Postings Report.
-    Content Creator, Machine Learning Engineer and Salesforce Development Representative (1/1/2024 - 12/31/2024)
-    <br> All other job roles (3/1/2024 - 3/1/2025)</p>
-</div>
+  <div class="lastPartContainer">
+    <p class="lastPart">
+      ¹ Median salary and job opening data are sourced from Lightcast™ Job
+      Postings Report. Content Creator, Machine Learning Engineer and Salesforce
+      Development Representative (1/1/2024 - 12/31/2024) <br />
+      All other job roles (3/1/2024 - 3/1/2025)
+    </p>
+  </div>
 </div>

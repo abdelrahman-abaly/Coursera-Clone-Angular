@@ -44,9 +44,11 @@ $whiteColor:white;
     .Link{
         color: black;
         text-decoration: none;
+       h3{
         &:hover{
-            text-decoration: underline;
-        } 
+          text-decoration: underline;
+      } 
+       }
         .IconPart{
 
             img{
