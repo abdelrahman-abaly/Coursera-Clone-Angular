@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ecommerce": {
+    "Coursera-Clone-Angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ecommerce",
+            "outputPath": "dist/coursera-clone-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -34,9 +34,11 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+          
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            
             ]
           },
           "configurations": {
@@ -73,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ecommerce:build:production"
+              "buildTarget": "Coursera-Clone-Angular:build:production"
             },
             "development": {
-              "buildTarget": "ecommerce:build:development"
+              "buildTarget": "Coursera-Clone-Angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "cf150766-e9b6-4458-b888-cb378309b91a"
   }
 }

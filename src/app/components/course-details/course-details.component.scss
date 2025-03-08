@@ -80,7 +80,13 @@ $whiteColor:white;
 
 
     .RecommendedButtonsContainer{
+       .enrollButton{
+
+        @media (max-width: 600px) {
+          font-size: 8px;
        
+        }
+       }
         
           .VeiwButton{
             a{
@@ -93,8 +99,14 @@ $whiteColor:white;
                   background-color: rgb(200, 200, 255);
                    
                 }
+            
             }
 
+            
+              @media (max-width: 600px) {
+                font-size: 8px;
+            
+              }
         
           }
       
@@ -112,10 +124,25 @@ $whiteColor:white;
    h6{
 
    height: 70px; margin-top: 9%;
+
+   @media (max-width: 600px) {
+    font-size: 10px;
+    
+    
+     }
    }
    p{
     color: $baseGray;
+    
+   @media (max-width: 600px) {
+    font-size: 8px;
+    
+    
+     }
    }
+
+   
+ 
 }
 }
 
@@ -128,7 +155,7 @@ $whiteColor:white;
 
 .RolesSimilarContainer{
   background-color: #f0f6ff;
-   margin: 0 -.9% 0 -.9%;
+   margin: 0 -.5% 0 -.5%;
     .CourseParent {
      
         background-color: $whiteColor;
